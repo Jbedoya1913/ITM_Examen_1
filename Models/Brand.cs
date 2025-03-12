@@ -9,7 +9,7 @@ namespace ITM.VehicleSales.Models
         public string Name { get; set; } = string.Empty;
         public string Country { get; set; } = string.Empty;
         
-        // Relaciones
+        
         public virtual ICollection<Vehicle> Vehicles { get; set; } = new List<Vehicle>();
     }
 } 
