@@ -1,0 +1,6 @@
+@ITM.VehicleSales_HostAddress = http://localhost:5195
+
+GET {{ITM.VehicleSales_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
