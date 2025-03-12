@@ -20,7 +20,7 @@ namespace ITM.VehicleSales.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configuración de Agency
+            
             modelBuilder.Entity<Agency>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -31,7 +31,7 @@ namespace ITM.VehicleSales.Data
                 entity.Property(e => e.Email).HasMaxLength(100);
             });
 
-            // Configuración de Customer
+           
             modelBuilder.Entity<Customer>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -43,7 +43,7 @@ namespace ITM.VehicleSales.Data
                 entity.Property(e => e.Address).HasMaxLength(200);
             });
 
-            // Configuración de Brand
+            
             modelBuilder.Entity<Brand>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -51,7 +51,7 @@ namespace ITM.VehicleSales.Data
                 entity.Property(e => e.Country).HasMaxLength(50);
             });
 
-            // Configuración de Vehicle
+            
             modelBuilder.Entity<Vehicle>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -61,7 +61,7 @@ namespace ITM.VehicleSales.Data
                 entity.Property(e => e.Price).HasColumnType("decimal(18,2)");
                 entity.Property(e => e.VIN).IsRequired().HasMaxLength(17);
                 
-                // Relaciones
+                
                 entity.HasOne(v => v.Brand)
                       .WithMany(b => b.Vehicles)
                       .HasForeignKey(v => v.BrandId)
@@ -73,14 +73,14 @@ namespace ITM.VehicleSales.Data
                       .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // Configuración de Sale
+            
             modelBuilder.Entity<Sale>(entity =>
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.SaleDate).IsRequired();
                 entity.Property(e => e.SalePrice).HasColumnType("decimal(18,2)");
                 
-                // Relaciones
+                
                 entity.HasOne(s => s.Vehicle)
                       .WithOne(v => v.Sale)
                       .HasForeignKey<Sale>(s => s.VehicleId)
