@@ -12,7 +12,7 @@ namespace ITM.VehicleSales.Models
         public string Phone { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         
-        // Relaciones
+        
         public virtual ICollection<Vehicle> Vehicles { get; set; } = new List<Vehicle>();
     }
 } 
