@@ -17,7 +17,7 @@ namespace ITM.VehicleSales.Controllers
             _saleService = saleService;
         }
 
-        // GET: api/Sales
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Sale>>> GetSales()
         {
@@ -25,7 +25,7 @@ namespace ITM.VehicleSales.Controllers
             return Ok(sales);
         }
 
-        // GET: api/Sales/5
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<Sale>> GetSale(int id)
         {
@@ -39,7 +39,7 @@ namespace ITM.VehicleSales.Controllers
             return Ok(sale);
         }
 
-        // GET: api/Sales/customer/5
+        
         [HttpGet("customer/{customerId}")]
         public async Task<ActionResult<IEnumerable<Sale>>> GetSalesByCustomer(int customerId)
         {
@@ -47,7 +47,7 @@ namespace ITM.VehicleSales.Controllers
             return Ok(sales);
         }
 
-        // POST: api/Sales
+        
         [HttpPost]
         public async Task<ActionResult<Sale>> PostSale(Sale sale)
         {
